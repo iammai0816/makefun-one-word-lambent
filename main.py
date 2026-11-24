@@ -23,6 +23,8 @@ def main() -> None:
     entry_path = os.path.join(output_dir, "entry.txt")
     with open(entry_path, "w", encoding="utf-8") as handle:
         handle.write(word)
+    # make.fun collects outputs as another user: leave it world-readable.
+    os.chmod(entry_path, 0o644)
 
 
 if __name__ == "__main__":
